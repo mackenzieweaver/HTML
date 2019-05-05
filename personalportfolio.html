@@ -1,0 +1,78 @@
+<!doctype html>
+    <head>
+        <meta charset="utf-8">
+        <title>Mackenzie Weaver Portfolio</title>
+        <meta name="description" content="Mackenzie Weaver's personal portfolio featuring his best 3 projects.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <!-- <script type="text/javascript" src="javascript.js" ></script> -->
+    </head>
+    <body>
+        <nav id="navbar">
+            <ul style="list-style-type: none;">
+                <li><a href="#welcome-section" class="btn">Welcome</a></li>
+                <li><a href="#projects" class="btn">Projects</a></li>
+                <li><a href="#contact" class="btn">Contact</a></li>
+            </ul>
+        </nav>
+        <section id="welcome-section">
+            <div id="welcome-text">
+                <h1>Hi, I'm Mackenzie Weaver</h1>
+                <p>a junior developer</p>
+            </div>            
+        </section>
+        <section id="projects">
+            <button id="left" onclick="plusDivs(-1)">&#10094;</button>
+            <div id="project-pics">
+                <a href="https://codepen.io/mackenzieweaver/pen/QPXjXz" target="_blank">
+                    <img class="mySlides" src="technicaldocumentation.png" alt="javascript technical documentation page" width="960px;">        
+                </a>
+                <a href="https://codepen.io/mackenzieweaver/pen/EJMmmz" target="_blank">
+                    <img class="mySlides" src="surveyform.png" alt="a survey page" width="960px;">        
+                </a>
+                <a href="https://codepen.io/mackenzieweaver/pen/axQvRQ" target="_blank">
+                    <img class="mySlides" src="tributepage.png" alt="a tribute page to Dr. Norman Borlaug" width="960px;">
+                </a>
+            </div>
+            <button id="right" onclick="plusDivs(+1)">&#10095;</button>
+            <script>
+                function plusDivs(n) {
+                    showDivs(slideIndex += n);
+                }
+                function showDivs(n) {
+                    var i;
+                    var x = document.getElementsByClassName("mySlides");
+                    if (n > x.length) {
+                        slideIndex = 1
+                    } 
+                    if (n < 1) {
+                        slideIndex = x.length
+                    }
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none"; 
+                    }
+                    x[slideIndex-1].style.display = "block"; 
+                }
+                var slideIndex = 1;
+                showDivs(slideIndex);
+            </script>
+        </section>
+        <!--<script src="javascript.js" async defer></script>-->
+    </body>
+    <footer id="contact">
+        <form id="footer-form">
+            <h2>Contact</h2>
+            <input id="name" type="text"  placeholder="Your name">
+            <input id="email" type="email"  placeholder="Your email">
+            <textarea rows="4" cols="50" placeholder="Message"></textarea>
+            <button id="submit" type="submit">Send</button>
+            <p></p>
+        </form>        
+        <div>
+            <a class="profile-link" href="https://www.linkedin.com/in/mackenzie-weaver-410991139/" target="_blank">LinkedIn</a>
+            <a class="profile-link" href="https://github.com/mackenzieweaver" target="_blank">Github</a>
+            <a class="profile-link" href="https://www.freecodecamp.org/mackenzieweaver" target="_blank">FreeCodeCamp Profile</a>
+        </div>
+        <br><p id="signature">Mackenize Weaver &copy;2019 </p>
+    </footer>
+</html>
